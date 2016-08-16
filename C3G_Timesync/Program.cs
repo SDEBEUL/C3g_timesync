@@ -88,14 +88,14 @@ namespace C3G_Timesync
             Debug.Init();
             Debug.Message("INFO", "System restarted");
             //
-            Console.Title = "VOLVO Comau C3G Timesync Build by SDEBEUL 16w08d03";
+            Console.Title = "VOLVO Comau C3G Timesync Build by SDEBEUL 16w32d02";
             Console.BufferHeight = 25;
             //
             Console.WriteLine("Gadata up and running current timestamp= " +  GetTimeFromGadata().ToString());
             //build file sytem watch 
             //*****************************************************************************************************************************************
             FileSystemWatcher watcher = new FileSystemWatcher();
-            watcher.Path = @"\\gnl9011101\6308-APP-NASROBOTBCK0001\robot_ga\ROBLAB\99999R99\Tsync";
+            watcher.Path = @"\\gnlsnm0101.gen.volvocars.net\6308-APP-NASROBOTBCK0001\robot_ga\ROBLAB\99999R99\Tsync";
             watcher.Filter = "*.TSF"; ;
             watcher.InternalBufferSize = (watcher.InternalBufferSize * 2); //2 times default buffer size 
             watcher.Error += new ErrorEventHandler(OnError);
@@ -135,7 +135,7 @@ namespace C3G_Timesync
 
         }
  //Event handeler for error from filewatcher
-        private static void OnError(object source, ErrorEventArgs e) { Debug.Message("FileWachter", e.GetException().Message); Debug.Restart(); }
+        private static void OnError(object source, ErrorEventArgs e) { Debug.Restart(); }
 //Event handeler for robot creates file  (adds to buffer)
         private static void OnChanged(object source, FileSystemEventArgs e) { Buffer.Record(e.FullPath); }
  //Event handeler for robot confirms sync
