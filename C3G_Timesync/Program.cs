@@ -88,7 +88,7 @@ namespace C3G_Timesync
             Debug.Init();
             Debug.Message("INFO", "System restarted");
             //
-            Console.Title = "VOLVO Comau C3G Timesync Build by SDEBEUL 16w32d02";
+            Console.Title = "VOLVO Comau C3G Timesync Build by SDEBEUL 17w20d04";
             Console.BufferHeight = 25;
             //
             Console.WriteLine("Gadata up and running current timestamp= " +  GetTimeFromGadata().ToString());
@@ -183,7 +183,7 @@ namespace C3G_Timesync
         static DateTime GetTimeFromGadata()
         {
             //open connection to gadata
-            using (SqlConnection Gadataconn = new SqlConnection("user id=GADATA; password=GADATA987; server=SQLA001.gen.volvocars.net;" +
+            using (SqlConnection Gadataconn = new SqlConnection("user id=VCSCTimesync; password=VCSCTimesync; server=SQLA001.gen.volvocars.net;" +
                                                       "Trusted_Connection=no; database=gadata; connection timeout=30"))
             {
                 try
@@ -225,7 +225,7 @@ namespace C3G_Timesync
         static void LogTsynctoGADATA(string ai_robot, DateTime ad_robotdate)
         {
             //open connection to gadata
-            using (SqlConnection Gadataconn = new SqlConnection("user id=GADATA; password=GADATA987; server=SQLA001.gen.volvocars.net;" +
+            using (SqlConnection Gadataconn = new SqlConnection("user id=VCSCTimesync; password=VCSCTimesync; server=SQLA001.gen.volvocars.net;" +
                                                       "Trusted_Connection=no; database=gadata; connection timeout=30"))
             {
                 try
@@ -268,7 +268,7 @@ namespace C3G_Timesync
         static void LogConfirmtoGADATA(string ai_robot)
         {
            //open connection to gadata
-            using (SqlConnection Gadataconn = new SqlConnection("user id=GADATA; password=GADATA987; server=SQLA001.gen.volvocars.net;" +
+            using (SqlConnection Gadataconn = new SqlConnection("user id=VCSCTimesync; password=VCSCTimesync; server=SQLA001.gen.volvocars.net;" +
                                                       "Trusted_Connection=no; database=gadata; connection timeout=30"))
             {
                 try
